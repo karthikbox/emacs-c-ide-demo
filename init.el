@@ -28,6 +28,7 @@
     projectile
     volatile-highlights
     undo-tree
+    magit
     zygospore))
 
 (defun install-packages ()
@@ -41,10 +42,33 @@
 
 (install-packages)
 
+(global-linum-mode 1)
+
 ;; this variables must be set before load helm-gtags
 ;; you can change to any prefix key of your choice
-(setq helm-gtags-prefix-key "\C-cg")
+(setq
+ helm-gtags-ignore-case t
+ helm-gtags-auto-update t
+ helm-gtags-use-input-at-cursor t
+ helm-gtags-pulse-at-cursor t
+ helm-gtags-prefix-key "\C-cg"
+ helm-gtags-suggested-key-mapping t
+ )
 
+(require 'helm-gtags)
+;; Enable helm-gtags-mode
+(add-hook 'dired-mode-hook 'helm-gtags-mode)
+(add-hook 'eshell-mode-hook 'helm-gtags-mode)
+(add-hook 'c-mode-hook 'helm-gtags-mode)
+(add-hook 'c++-mode-hook 'helm-gtags-mode)
+(add-hook 'asm-mode-hook 'helm-gtags-mode)
+
+(define-key helm-gtags-mode-map (kbd "C-c g a") 'helm-gtags-tags-in-this-function)
+(define-key helm-gtags-mode-map (kbd "C-j") 'helm-gtags-select)
+(define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)
+(define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
+(define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+(define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
 (add-to-list 'load-path "~/.emacs.d/custom")
 
 (require 'setup-helm)
@@ -158,3 +182,23 @@
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+
+
+;;zenburn theme
+(load-theme 'zenburn t)
+
+(setq org-agenda-files (list "~/Documents/work.org"
+                             "~/Documents/school.org"
+                             "~/Documents/personal.org"))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values (quote ((c-indent-level . 8)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
