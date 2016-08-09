@@ -30,7 +30,8 @@
     projectile
     volatile-highlights
     undo-tree
-    magit
+    bookmark+
+    zenburn-theme
     zygospore))
 
 (defun install-packages ()
@@ -197,7 +198,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(bmkp-last-as-first-bookmark-file "/home/kareddy/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
  '(safe-local-variable-values (quote ((c-indent-level . 8))))
  '(show-paren-mode t))
 (custom-set-faces
@@ -206,5 +207,5 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-(global-set-key (kbd "C-x g") 'magit-status)
+;; (global-set-key (kbd "C-x g") 'magit-status)
 (require 'bookmark+)
