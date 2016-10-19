@@ -32,6 +32,7 @@
     undo-tree
     bookmark+
     zenburn-theme
+    xcscope
     zygospore))
 
 (defun install-packages ()
@@ -209,3 +210,9 @@
  )
 ;; (global-set-key (kbd "C-x g") 'magit-status)
 (require 'bookmark+)
+(require 'xcscope)
+(cscope-setup)
+
+(require 'whitespace)
+(setq whitespace-style '(face empty tabs lines-tail trailing))
+ (global-whitespace-mode t)
