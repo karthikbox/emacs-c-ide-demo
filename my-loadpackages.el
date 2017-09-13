@@ -5,7 +5,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;; XXX change this
-(add-to-list 'load-path "~/doxymacs-1.8.0/lisp")
+;; (add-to-list 'load-path "~/doxymacs-1.8.0/lisp")
 
 (require 'setup-helm)
 (require 'setup-helm-gtags)
@@ -160,5 +160,5 @@
 
 (global-set-key (kbd "M-1") 'isearch-forward-symbol-at-point)
 
-(require 'doxymacs)
-(add-hook 'c-mode-common-hook'doxymacs-mode)
+;; (require 'doxymacs)
+;; (add-hook 'c-mode-common-hook'doxymacs-mode)
