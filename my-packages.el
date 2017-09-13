@@ -5,9 +5,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
-(defvar required-packages
-  '(
-    anzu
+(defconst demo-packages
+  '(anzu
     company
     duplicate-thing
     ggtags
@@ -16,12 +15,14 @@
     helm-projectile
     helm-swoop
     ;; function-args
+    magit
     clean-aindent-mode
     comment-dwim-2
     dtrt-indent
     ws-butler
     iedit
     yasnippet
+
     yasnippet-snippets
     magit
     smartparens
@@ -35,19 +36,13 @@
     ace-window
     ) "a list of packages to ensure are installed at launch.")
 
-;; method to check if all packages are installed
-(defun packages-installed-p ()
-  (dolist (p required-packages)
-    (when (not (package-installed-p p)) do (return nil)
-        finally (return t))))
+(defun install-packages ()
+  "Install all required packages."
+  (interactive)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package demo-packages)
+    (unless (package-installed-p package)
+      (package-install package))))
 
-;; if not all packages are installed, check one by one and install the missing ones.
-(unless (packages-installed-p)
-  ;; check for new packages (package versions)
-  (message "%s" "Emacs is now refreshing its package database...")
-  (package-refresh-contents)
-  (message "%s" " done.")
-  ;; install the missing packages
-  (dolist (p required-packages)
-    (when (not (package-installed-p p))
-      (package-install p))))
+(install-packages)
