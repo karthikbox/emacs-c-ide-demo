@@ -5,7 +5,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;; XXX change this
-(add-to-list 'load-path "~/doxymacs-1.8.0/lisp")
+;; (add-to-list 'load-path "~/doxymacs-1.8.0/lisp")
 
 (require 'setup-helm)
 (require 'setup-helm-gtags)
@@ -165,3 +165,4 @@
 (global-set-key (kbd "M-p") 'ace-window)
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 (setq aw-dispatch-always t)
+

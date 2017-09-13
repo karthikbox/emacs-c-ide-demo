@@ -16,6 +16,8 @@
     helm-swoop
     ;; function-args
     magit
+    org
+    remember
     clean-aindent-mode
     comment-dwim-2
     dtrt-indent
