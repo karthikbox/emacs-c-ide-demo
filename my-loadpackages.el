@@ -5,7 +5,7 @@
 
 (add-to-list 'load-path "~/.emacs.d/custom")
 ;; XXX change this
-(add-to-list 'load-path "~/doxymacs-1.8.0/lisp")
+;; (add-to-list 'load-path "~/doxymacs-1.8.0/lisp")
 
 (require 'setup-helm)
 (require 'setup-helm-gtags)
