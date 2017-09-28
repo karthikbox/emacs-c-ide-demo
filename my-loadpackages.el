@@ -13,8 +13,6 @@
 (require 'setup-cedet)
 (require 'setup-editing)
 
-(windmove-default-keybindings)
-
 ;; company
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -162,3 +160,8 @@
 
 (require 'doxymacs)
 (add-hook 'c-mode-common-hook'doxymacs-mode)
+
+(require 'ace-window)
+(global-set-key (kbd "M-p") 'ace-window)
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+(setq aw-dispatch-always t)
