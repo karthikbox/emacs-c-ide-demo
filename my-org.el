@@ -17,10 +17,11 @@
          "* TODO %i%? \n")
         ("T" "Tickler" entry (file+headline (concat org-directory "/tickler.org") "Tickler")
          "* %i%? \n %U")
-        ("l" "Link" plain (file (concat org-directory "/links.org"))
-         "- %?\n %x\n")))
+        ("n" "Notes" entry (file+headline (concat org-directory "/notes.org") "Notes")
+         "* %?\n %x\n")))
 
 (setq org-refile-targets '(("~/Google Drive/orgfiles/gtd.org" :maxlevel . 3)
+                           ("~/Google Drive/orgfiles/notes.org" :level . 1)
                            ("~/Google Drive/orgfiles/someday.org" :level . 1)
                            ("~/Google Drive/orgfiles/tickler.org" :maxlevel . 2)))
 
