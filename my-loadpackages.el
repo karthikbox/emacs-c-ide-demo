@@ -162,3 +162,15 @@
 
 ;; (require 'doxymacs)
 ;; (add-hook 'c-mode-common-hook'doxymacs-mode)
+
+;; Some initial languages we want org-babel to support
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (sh . t)
+   (C . t)
+   (python . t)
+   (gnuplot t)
+   ))
+
+(setq ispell-program-name "/usr/local/bin/ispell")
