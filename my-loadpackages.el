@@ -148,7 +148,6 @@
  ;; If there is more than one, they won't work right.
  )
 (global-set-key (kbd "C-x g") 'magit-status)
-(require 'bookmark+)
 (require 'xcscope)
 (cscope-setup)
 
@@ -157,9 +156,6 @@
  (global-whitespace-mode t)
 
 (global-set-key (kbd "M-1") 'isearch-forward-symbol-at-point)
-
-(require 'doxymacs)
-(add-hook 'c-mode-common-hook'doxymacs-mode)
 
 (require 'ace-window)
 (global-set-key (kbd "M-p") 'ace-window)
