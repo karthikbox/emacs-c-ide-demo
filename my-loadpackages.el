@@ -158,6 +158,7 @@
 
 (global-set-key (kbd "M-1") 'isearch-forward-symbol-at-point)
 
+
 (require 'doxymacs)
 (add-hook 'c-mode-common-hook'doxymacs-mode)
 
@@ -166,3 +167,14 @@
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 (setq aw-dispatch-always t)
 
+;; Some initial languages we want org-babel to support
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '(
+   (sh . t)
+   (C . t)
+   (python . t)
+   (gnuplot t)
+   ))
+
+(setq ispell-program-name "/usr/local/bin/ispell")
