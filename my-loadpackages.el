@@ -177,3 +177,5 @@
    ))
 
 (setq ispell-program-name "/usr/local/bin/ispell")
+(add-hook 'org-mode-hook 'turn-on-flyspell)
+
