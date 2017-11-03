@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: sp
+# key: sp
+# --
+std::make_shared<${1:ClassName}>($2);

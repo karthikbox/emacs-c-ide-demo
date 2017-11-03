@@ -1,0 +1,14 @@
+# -*- mode: snippet -*-
+# name: query-leaf
+# key: qlf
+# --
+<leaf name="${1:}" type="${2:bt_string}" invoke="core::queries::${3:}" />
+
+${2:$(my-command-query-leaf yas/text)}
+core::queries::$3(const gcl::core::${4:nodename}_args &q);
+
+${2:$(my-command-query-leaf yas/text)}
+core::queries::$3(const gcl::core::$4_args &q)
+{
+
+}

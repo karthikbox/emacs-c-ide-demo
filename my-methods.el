@@ -18,3 +18,8 @@
 ;; add hooks
 (add-hook 'kill-buffer-hook 'my-command-buffer-kill-hook)
 (add-hook 'after-save-hook 'my-command-buffer-run-hook)
+
+(defun my-command-query-leaf (q)
+  "Translate query leaf type to equivalent C++ data type"
+  (cond ((string= "bt_string" q) (print 'std::string))
+        ((string= "bt_bool" q) (print 'bool))))
