@@ -24,7 +24,6 @@
     ws-butler
     iedit
     yasnippet
-
     yasnippet-snippets
     magit
     smartparens
