@@ -9,7 +9,7 @@
 
 (require 'setup-helm)
 (require 'setup-helm-gtags)
-(require 'setup-ggtags)
+;; (require 'setup-ggtags)
 (require 'setup-cedet)
 (require 'setup-editing)
 
@@ -158,8 +158,8 @@
 
 (global-set-key (kbd "M-1") 'isearch-forward-symbol-at-point)
 
-(require 'doxymacs)
-(add-hook 'c-mode-common-hook'doxymacs-mode)
+;; (require 'doxymacs)
+;; (add-hook 'c-mode-common-hook'doxymacs-mode)
 
 (require 'ace-window)
 (global-set-key (kbd "M-p") 'ace-window)
