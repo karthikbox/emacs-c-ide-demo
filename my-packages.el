@@ -24,7 +24,7 @@
     ws-butler
     iedit
     yasnippet
-    yasnippet-snippets
+    ;; yasnippet-snippets
     magit
     smartparens
     projectile

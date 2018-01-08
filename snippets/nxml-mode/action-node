@@ -1,0 +1,37 @@
+# -*- mode: snippet -*-
+# name: action-node
+# key: and
+# --
+<!-- $6 -->
+<verb name="${1:verb-name}" invoke="core::actions::${2:handler-name}">
+    <mandatory>
+        <arg name="${3:param-name}" type="string"/>
+    </mandatory>
+</verb>
+
+int
+core::actions::$2(const gcl::core::${4:action-name}::$2_cfg &,
+                  u_int32_t *req_id);
+
+int
+core::actions::$2(const gcl::core::$4::$2_cfg &param,
+                  u_int32_t *req_id)
+{
+    return MgmtUtils::schedule_dc_action(
+        // modify
+        [param](config::VaWRef cfg, const LogHandle &) {
+            ignore(cfg);
+            $7
+            return MGMT_OK;
+        },
+        req_id,
+        // validate
+        nullptr,
+        //config_sync_cb
+        nullptr,
+        // config id
+        Mgmt::CONFIG_ID_SELF,
+        // loghandle
+        "${5:/mgmt/action/dr/set_data_checker}"
+        );
+}

@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: return action result
+# key: ar
+# --
+return ActionResult(${1:Mgmt::MGMT_FAIL}, "$2")
